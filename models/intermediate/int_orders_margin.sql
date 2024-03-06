@@ -1,4 +1,4 @@
-SELECT
+SELECT 
   orders_id,
   max(date_date) as date_date,
   ROUND(SUM(revenue),2) as revenue,
