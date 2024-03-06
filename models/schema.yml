@@ -1,29 +1,53 @@
 version: 2
-
-sources: 
-  - name: raw 
-    schema: gz_raw_data 
-    description: raw_data_tables 
+sources:
+  - name: raw
+    schema: gz_raw_data
+    description: Hello raw data
     tables:
-    - name: sales
-      identifier: raw_gz_sales
-      description: sales_d 
-    - name: product
-      identifier: raw_gz_product
-      description: product_d
-      columns:
-        - name: products_id
-          description: PK
-          tests:
-            - unique 
-            - not_null
-                
-    - name: ship
-      identifier: raw_gz_ship
-      description: ship_d
-      columns:
-        - name: orders_id
-          description: pk
-          tests:
-            - unique
-            - not_null 
+      - name: sales
+        identifier: raw_gz_sales
+        description: Hi sales
+      - name: product
+        identifier: raw_gz_product
+        description: Hi product
+        columns:
+           - name: products_id
+             tests:
+             - unique
+             - not_null
+      - name: ship
+        identifier: raw_gz_ship
+        description: Hi ship
+      - name: adwords
+        identifier: raw_gz_adwords
+        tests:
+          - unique:
+              column_name: "campaign_key || '-' || date_date"
+      - name: bing
+        identifier: raw_gz_bing
+        tests:
+          - unique:
+              column_name: "campaign_key || '-' || date_date"
+      - name: criteo
+        identifier: raw_gz_criteo
+        tests:
+          - unique:
+              column_name: "campaign_key || '-' || date_date"
+      - name: facebook
+        identifier: raw_gz_facebook
+        tests:
+          - unique:
+              column_name: "campaign_key || '-' || date_date"
+      - name: int_camp
+        identifier: int_campign
+      - name: fin_camp_day
+        identifier: finance_campigns_day
+      - name: int_camps_day
+        identifier: int_campaings_day
+
+
+
+
+
+
+
